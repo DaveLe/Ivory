@@ -25,23 +25,19 @@ public class AddVaccination extends AppCompatActivity {
 
         Spinner vaccinationList = findViewById(R.id.spinner);
 
-        TextInputEditText yearView = findViewById(R.id.year);
-        String yearInput = yearView.getText().toString();
-        int yearNumber = Integer.valueOf(yearInput);
-
-        TextInputEditText monthView = findViewById(R.id.month);
-        String monthInput = monthView.getText().toString();
-        int monthNumber = Integer.valueOf(monthInput);
-
-        Vaccines v = new Vaccines("To - Do", monthNumber, yearNumber);
-        u.addVaccinations(v);
-
         Button finishButton = findViewById(R.id.finish);
-
 
         finishButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                TextInputEditText yearView = findViewById(R.id.year);
+                TextInputEditText monthView = findViewById(R.id.month);
+                String yearInput = yearView.getText().toString();
+                int yearNumber = Integer.valueOf(yearInput);
+                String monthInput = monthView.getText().toString();
+                int monthNumber = Integer.valueOf(monthInput);
+                Vaccines vac = new Vaccines("To - Do", monthNumber, yearNumber);
+                u.addVaccinations(vac);
                 db.collection("users").document(authUser.getUid()).set(u);
             }
         });
