@@ -63,16 +63,12 @@ class MainActivity : AppCompatActivity() {
     private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener { item ->
         when (item.itemId) {
             // TODO: decide on which navigation menus to include
-            R.id.navigation_home -> {
-                message.setText(R.string.title_home)
+            R.id.navigation_personal -> {
+                message.setText(R.string.title_personal)
                 return@OnNavigationItemSelectedListener true
             }
-            R.id.navigation_dashboard -> {
-                message.setText(R.string.title_dashboard)
-                return@OnNavigationItemSelectedListener true
-            }
-            R.id.navigation_notifications -> {
-                message.setText(R.string.title_notifications)
+            R.id.navigation_suggested -> {
+                message.setText(R.string.title_suggested)
                 return@OnNavigationItemSelectedListener true
             }
         }
