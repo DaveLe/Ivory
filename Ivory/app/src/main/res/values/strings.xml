@@ -29,6 +29,35 @@
     <string name="varicellaLink"> https://www.cdc.gov/vaccines/vpd/varicella/hcp/index.html</string>
     <string name="yellow_FeverLink"> https://www.cdc.gov/vaccines/vpd/yf/hcp/index.html</string>
 
+    <string-array
+        name="names">
+        <item>Adenovirus</item>
+        <item>Anthrax</item>
+        <item>Diphtheria</item>
+        <item>Hepatitis A</item>
+        <item>Hepatitis B</item>
+        <item>HepB (Engerix-B, Recombivax HB)</item>
+        <item>Haemophilus influenzae type b (Hib)</item>
+        <item>Human Papillomavirus (HPV)</item>
+        <item>Seasonal Influenza (Flu)/item>
+        <item>Japanese Encephalitis</item>
+        <item>Measles</item>
+        <item>Meningococcal</item>
+        <item>Mumps</item>
+        <item>Pertussis</item>
+        <item>Pneumococcal</item>
+        <item>Polio</item>
+        <item>Rabies</item>
+        <item>Rubella</item>
+        <item>Shingles</item>
+        <item>Smallpox</item>
+        <item>Tetanus</item>
+        <item>Tuberculosis</item>
+        <item>Typhoid Fever</item>
+        <item>Varicella</item>
+        <item>Yellow Fever</item>
+    </string-array>
+
 
 
 

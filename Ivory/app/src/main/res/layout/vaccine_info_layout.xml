@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
+    android:orientation="vertical"
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,8 +10,19 @@
         android:id="@+id/vac"
         android:layout_width="220dp"
         android:layout_height="49dp"
+        android:text="test"
+        android:layout_margin="50dp"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="26dp" />
 
-</android.support.constraint.ConstraintLayout>
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="253dp"
+        android:layout_height="78dp"
+        android:text="For more information"
+        android:layout_margin="50dp"
+        tools:layout_editor_absoluteX="49dp"
+        tools:layout_editor_absoluteY="254dp" />
+
+</LinearLayout>
