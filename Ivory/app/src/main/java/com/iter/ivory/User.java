@@ -34,4 +34,8 @@ public class User {
     public void setVaccinations(ArrayList<Vaccines> vaccinations){
         this.vaccinations = vaccinations;
     }
+
+    public void addVaccinations(Vaccines v){
+        vaccinations.add(v);
+    }
 }
