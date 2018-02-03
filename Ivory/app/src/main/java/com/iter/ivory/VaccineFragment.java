@@ -9,13 +9,21 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.firestore.DocumentReference;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.iter.ivory.dummy.DummyContent;
 import com.iter.ivory.dummy.DummyContent.DummyItem;
+
+import java.util.ArrayList;
 
 public class VaccineFragment extends Fragment {
     private static final String ARG_VIEW_PERSONAL = "arg_view_personal";
     private Boolean mViewPersonal = true;
-
+    private User user;
+    FirebaseFirestore db = FirebaseFirestore.getInstance();
     private OnListFragmentInteractionListener mListener;
 
     public VaccineFragment() {
@@ -36,6 +44,28 @@ public class VaccineFragment extends Fragment {
         if (getArguments() != null) {
             mViewPersonal = getArguments().getBoolean(ARG_VIEW_PERSONAL);
         }
+        FirebaseAuth authuser = FirebaseAuth.getInstance();
+        setUser(authuser);
+
+        if (mViewPersonal){
+
+        }
+    }
+
+    public void setUser(final FirebaseAuth authuser){
+        DocumentReference userinfo;
+        userinfo = db.collection("users").document(authuser.getUid());
+        userinfo.get().addOnSuccessListener(new OnSuccessListener<DocumentSnapshot>() {
+            @Override
+            public void onSuccess(DocumentSnapshot documentSnapshot) {
+                try{
+                    user = documentSnapshot.toObject(User.class);
+                }catch (IllegalStateException e){
+                    db.collection("users").document(authuser.getUid()).set(new User(authuser.getCurrentUser().getDisplayName(), new ArrayList<Vaccines>()));
+                    setUser(authuser);
+                }
+            }
+        });
     }
 
     @Override

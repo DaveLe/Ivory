@@ -4,6 +4,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iter.ivory.VaccineFragment.OnListFragmentInteractionListener;
@@ -31,7 +32,7 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
         holder.mItem = mValues.get(position);
-        holder.mContentView.setText(mValues.get(position).content);
+        //holder.mContentView.setText(mValues.get(position).content);
 
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -52,18 +53,17 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mContentView;
+        public final TextView nameView;
+        public final TextView lastView;
+        public final ImageView vacicon;
         public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mContentView = view.findViewById(R.id.content);
-        }
-
-        @Override
-        public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            vacicon = view.findViewById(R.id.vacicon);
+            nameView = view.findViewById(R.id.name);
+            lastView = view.findViewById(R.id.lastvac);
         }
     }
 }
