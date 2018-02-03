@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
-import com.iter.ivory.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_main.*
 
 

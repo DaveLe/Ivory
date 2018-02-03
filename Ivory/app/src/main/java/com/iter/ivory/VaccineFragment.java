@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -14,16 +15,15 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.firestore.DocumentReference;
 import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
-import com.iter.ivory.dummy.DummyContent;
-import com.iter.ivory.dummy.DummyContent.DummyItem;
 
 import java.util.ArrayList;
 
 public class VaccineFragment extends Fragment {
     private static final String ARG_VIEW_PERSONAL = "arg_view_personal";
     private Boolean mViewPersonal = true;
-    private User user;
+    private User user = new User("", new ArrayList<Vaccines>());
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    RecyclerView recyclerView;
     private OnListFragmentInteractionListener mListener;
 
     public VaccineFragment() {
@@ -60,11 +60,11 @@ public class VaccineFragment extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 try{
                     user = documentSnapshot.toObject(User.class);
-                    user.addVaccinations(new Vaccines("anothervac", 5, 6));
-                    db.collection("users").document(authuser.getUid()).set(user);
+                    if (recyclerView!=null) {
+                        recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(user.getVaccinations(), mListener));
+                    }
                 }catch (IllegalStateException e){
                     db.collection("users").document(authuser.getUid()).set(new User(authuser.getCurrentUser().getDisplayName(), new ArrayList<Vaccines>()));
-                    setUser(authuser);
                 }
             }
         });
@@ -78,7 +78,7 @@ public class VaccineFragment extends Fragment {
         // Set the adapter
         if (view instanceof RecyclerView) {
             Context context = view.getContext();
-            RecyclerView recyclerView = (RecyclerView) view;
+            recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
             recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(user.getVaccinations() ,mListener));
         }

@@ -1,8 +1,5 @@
 package com.iter.ivory;
 
-/**
- * Created by David on 2/3/18.
- */
 import java.util.*;
 
 public class User {
@@ -11,7 +8,6 @@ public class User {
     ArrayList<Vaccines> vaccinations = new ArrayList<>();
 
     User(){
-
     }
 
     User(String name, ArrayList<Vaccines> vaccinations){

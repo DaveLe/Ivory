@@ -9,6 +9,7 @@ import java.util.Calendar;
 
 public class Vaccines {
     String vaccineName;
+    String subName;
     Date startDate;
     Date remindDate;
 
@@ -25,7 +26,8 @@ public class Vaccines {
 
     }
 
-    Vaccines(String vaccineName, int month, int year){
+    Vaccines(String vaccineName, String subname, int month, int year){
+        this.subName = subname;
         this.vaccineName = vaccineName;
         this.startDate = new Date();
         this.remindDate = calculateRemindDate(startDate, month, year);
@@ -37,6 +39,14 @@ public class Vaccines {
 
     public void setVaccineName(String vaccineName){
         this.vaccineName = vaccineName;
+    }
+
+    public String getSubName(){
+        return subName;
+    }
+
+    public void setSubName(String subName){
+        this.subName = subName;
     }
 
     public Date getStartDate(){

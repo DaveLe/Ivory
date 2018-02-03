@@ -7,9 +7,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.iter.ivory.VaccineFragment.OnListFragmentInteractionListener;
-
 import java.util.ArrayList;
 
 public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccineRecyclerViewAdapter.ViewHolder> {
