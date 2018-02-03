@@ -2,24 +2,21 @@
     <string name="app_name">Immune8</string>
     <string name="title_suggested">Suggested</string>
     <string name="title_personal">My Vaccines</string>
-    <string name ="Hepititas_A">Hepititas A</string>
-    <string name ="Hepititas_B">Hepititas B</string>
-    <string name ="Haemophilus_influenzae_type_b">Haemophilus influenzae type b (Hib)</string>
-    <string name ="Human_Papillomavirus">Human Papillomavirus (HPV)</string>
-    <string name ="Seasonal_Influenza">Seasonal Influenza (Flu)</string>
+    <string name="Hepititas_A">Hepititas A</string>
+    <string name="Hepititas_B">Hepititas B</string>
+    <string name="Haemophilus_influenzae_type_b">Haemophilus influenzae type b (Hib)</string>
+    <string name="Human_Papillomavirus">Human Papillomavirus (HPV)</string>
+    <string name="Seasonal_Influenza">Seasonal Influenza (Flu)</string>
 
-    <string-array
-        name="Adenovirus">
+    <string-array name="Adenovirus">
         <item>Adenovirus</item>
     </string-array>
 
-    <string-array
-        name="Anthrax">
+    <string-array name="Anthrax">
         <item>AVA (BioThrax)</item>
     </string-array>
 
-    <string-array
-        name="Diphtheria">
+    <string-array name="Diphtheria">
         <item>AVA (BioThrax)</item>
         <item>DTaP (Daptacel, Infanrix)</item>
         <item>Td (Tenivac, generic)</item>
@@ -30,90 +27,76 @@
         <item>DTaP-IPV/Hib (Pentacel)</item>
     </string-array>
 
-    <string-array
-        name="Hepatitis_A">
+    <string-array name="Hepatitis_A">
         <item>AHepA (Havrix, Vaqta)</item>
         <item>HepA-HepB (Twinrix)</item>
     </string-array>
 
-    <string-array
-        name="Hepatitis_B">
+    <string-array name="Hepatitis_B">
         <item>HepB (Engerix-B, Recombivax HB))</item>
         <item>DTaP-HepB-IPV (Pediarix)</item>
         <item>HepA-HepB (Twinrix)</item>
     </string-array>
 
-    <string-array
-        name="Haemophilus_influenzae_type_b">
+    <string-array name="Haemophilus_influenzae_type_b">
         <item>Hib (ActHIB, PedvaxHIB, Hiberix))</item>
         <item>MenCY-Hib (MenHibrix)</item>
         <item>DTaP-IPV/Hib (Pentacel)</item>
     </string-array>
 
-    <string-array
-        name="Human_Papillomavirus">
+    <string-array name="Human_Papillomavirus">
         <item>HPV9 (Gardasil 9)</item>
         <item>HPV4 (Gardasil)</item>
         <item>HPV2 (Cervarix)</item>
     </string-array>
 
-    <string-array
-        name="Seasonal_Influenza">
+    <string-array name="Seasonal_Influenza">
         <item>IIV (Afluria, Fluad, Flublok, Flucelvax, FluLaval, Fluarix, Fluvirin, Fluzone, Fluzone High-Dose,
               Fluzone Intradermal)</item>
         <item>LAIV (FluMist)</item>
     </string-array>
 
-    <string-array
-        name="Japanese_Encephalitis">
+    <string-array name="Japanese_Encephalitis">
         <item>JE (Ixiaro))</item>
     </string-array>
 
-    <string-array
-        name="Measles">
+    <string-array name="Measles">
         <item>MMR (M-M-R II)</item>
         <item>MMRV (ProQuad)</item>
     </string-array>
 
-    <string-array
-        name="Meningococcal">
+    <string-array name="Meningococcal">
         <item>MenACWY (Menactra, Menveo)</item>
         <item>MPSV4 (Menomune)</item>
         <item>MenCY-Hib (MenHibrix)</item>
         <item>MenB (Bexsero, Trumenba)</item>
     </string-array>
 
-    <string-array
-        name="Mumps">
+    <string-array name="Mumps">
         <item>MMR (M-M-R II)</item>
         <item>MMRV (ProQuad)</item>
     </string-array>
 
-    <string-array
-        name="Yellow_Fever">
+    <string-array name="Yellow_Fever">
         <item>YF (YF-Vax)</item>
     </string-array>
 
-    <string-array
-        name="Varicella">
+    <string-array name="Varicella">
         <item>VAR - Varivax</item>
         <item>MMRV - ProQuad</item>
     </string-array>
 
-    <string-array
-        name="Typhoid_Fever">
+    <string-array name="Typhoid_Fever">
         <item>Typhoid Oral - Vivotif</item>
         <item>Typhoid Polysaccharide - Typhim Vi</item>
     </string-array>
 
 
-    <string-array
-        name="Tuberculosis">
+    <string-array name="Tuberculosis">
         <item>Tuberculosis</item>
     </string-array>
 
-    <string-array
-        name="Tetanus">
+    <string-array name="Tetanus">
         <item>DTaP - Daptacel, Infanrix</item>
         <item>Td Tenivac, generic</item>
         <item>DT generic</item>
@@ -123,37 +106,31 @@
         <item>DTaP-IPV/Hib - Pentacel</item>
     </string-array>
 
-    <string-array
-        name="Shingles">
+    <string-array name="Shingles">
         <item>ZOS - Zostavax</item>
     </string-array>
 
-    <string-array
-        name="Smallpox">
+    <string-array name="Smallpox">
         <item>Vaccinia (ACAM2000)</item>
     </string-array>
 
-    <string-array
-        name="Rabies">
+    <string-array name="Rabies">
         <item>Rabies - Imovax Rabies, RabAvert</item>
     </string-array>
 
 
-    <string-array
-        name="Rotavirus">
+    <string-array name="Rotavirus">
         <item>RV1 - Rotarix</item>
         <item>RV5 - RotaTeq</item>
     </string-array>
 
 
-    <string-array
-        name="Rubella">
+    <string-array name="Rubella">
         <item>MMR : M-M-R II</item>
         <item>MMRV - ProQuad</item>
     </string-array>
 
-    <string-array
-        name="Pertussis">
+    <string-array name="Pertussis">
         <item>DTaP - Daptacel, Infanrix</item>
         <item>Tdap - Adacel, Boostrix</item>
         <item>DTaP-IPV : Kinrix, Quadracel</item>
@@ -161,18 +138,17 @@
         <item>DTaP-IPV/Hib - Pentacel</item>
     </string-array>
 
-    <string-array
-        name="Pneumococcal">
+    <string-array name="Pneumococcal">
         <item>PCV13 (Prevnar13)</item>
         <item>PPSV23 (Pneumovax 23)</item>
     </string-array>
 
-    <string-array
-        name="Polio">
+    <string-array name="Polio">
         <item> Polio - Ipol</item>
         <item>DTaP-IPV - Kinrix, Quadracel</item>
         <item> DTaP-HepB-IPV - Pediarix</item>
         <item>DTaP-IPV/Hib - Pentacel</item>
     </string-array>
+    <string name="title_activity_add_vaccination">AddVaccination</string>
 
 </resources>
