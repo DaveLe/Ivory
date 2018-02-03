@@ -21,11 +21,11 @@
         <activity
             android:name=".AddVaccination"
             android:label="@string/title_activity_add_vaccination"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme"/>
         <activity
             android:name=".VaccineInfo"
             android:label="@string/title_activity_vaccine_info"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme"/>
     </application>
 
 </manifest>

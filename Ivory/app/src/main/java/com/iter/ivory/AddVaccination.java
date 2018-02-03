@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -24,6 +25,7 @@ public class AddVaccination extends AppCompatActivity {
         setContentView(R.layout.add_vaccination);
 
         Spinner vaccinationList = findViewById(R.id.spinner);
+        Spinner vaccinationsubList = findViewById(R.id.spinnersub);
 
         Button finishButton = findViewById(R.id.finish);
 
@@ -36,9 +38,10 @@ public class AddVaccination extends AppCompatActivity {
                 int yearNumber = Integer.valueOf(yearInput);
                 String monthInput = monthView.getText().toString();
                 int monthNumber = Integer.valueOf(monthInput);
-                Vaccines vac = new Vaccines("To - Do", monthNumber, yearNumber);
+                Vaccines vac = new Vaccines("To - Do", "subthing", monthNumber, yearNumber);
                 u.addVaccinations(vac);
                 db.collection("users").document(authUser.getUid()).set(u);
+                finish();
             }
         });
     }
