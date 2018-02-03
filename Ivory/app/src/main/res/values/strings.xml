@@ -2,4 +2,10 @@
     <string name="app_name">Ivory</string>
     <string name="title_suggested">Suggested</string>
     <string name="title_personal">My Vaccines</string>
+    <string-array
+        name="Adenovirus">
+        <item>Adenovirus</item>
+
+
+    </string-array>
 </resources>
