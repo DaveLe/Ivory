@@ -5,10 +5,12 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.iter.ivory.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_main.*
+import java.util.*
 
 
 // sign in response id and providers used with AuthUI
@@ -21,6 +23,10 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+//        val name : Vaccines = Vaccines("HPV2", Date())
+//        Log.e("hello",name.startDate.toString())
+//        Log.e("TIME",Vaccines.calculateRemindDate(Date(),4,1).toString() )
 
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
