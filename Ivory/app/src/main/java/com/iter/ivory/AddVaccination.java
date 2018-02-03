@@ -5,6 +5,7 @@ import android.support.design.widget.TextInputEditText;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.Spinner;
 
@@ -15,6 +16,7 @@ import java.util.ArrayList;
 
 public class AddVaccination extends AppCompatActivity {
 
+    ArrayList<String> sublist = new ArrayList<>();
     FirebaseAuth authUser = FirebaseAuth.getInstance();
     User u = new User(authUser.getCurrentUser().getDisplayName(),new ArrayList<Vaccines>());
     FirebaseFirestore db = FirebaseFirestore.getInstance();
@@ -25,7 +27,12 @@ public class AddVaccination extends AppCompatActivity {
         setContentView(R.layout.add_vaccination);
 
         Spinner vaccinationList = findViewById(R.id.spinner);
-        Spinner vaccinationsubList = findViewById(R.id.spinnersub);
+        final Spinner vaccinationsubList = findViewById(R.id.spinnersub);
+
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Adenovirus));
+        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        vaccinationsubList.setAdapter(adapter);
 
         Button finishButton = findViewById(R.id.finish);
 
@@ -42,6 +49,34 @@ public class AddVaccination extends AppCompatActivity {
                 u.addVaccinations(vac);
                 db.collection("users").document(authUser.getUid()).set(u);
                 finish();
+            }
+        });
+
+        vaccinationList.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                ArrayAdapter<String> adapter;
+                switch(position){
+
+                    case 1:
+                        adapter = new ArrayAdapter<String>(getApplication(),
+                                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Anthrax));
+                    default:
+                        adapter = new ArrayAdapter<String>(getApplication(),
+                                android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Adenovirus));
+
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    vaccinationsubList.setAdapter(adapter);
+                }
+
+
+
+
+            }
+
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
+
             }
         });
     }

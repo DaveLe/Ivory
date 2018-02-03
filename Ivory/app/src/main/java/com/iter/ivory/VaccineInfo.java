@@ -19,6 +19,7 @@ public class VaccineInfo extends AppCompatActivity {
 
         Button buttonLink = findViewById(R.id.button2);
 
+
     }
 
 }
