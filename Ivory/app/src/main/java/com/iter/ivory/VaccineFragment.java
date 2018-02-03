@@ -60,6 +60,8 @@ public class VaccineFragment extends Fragment {
             public void onSuccess(DocumentSnapshot documentSnapshot) {
                 try{
                     user = documentSnapshot.toObject(User.class);
+                    user.addVaccinations(new Vaccines("anothervac", 5, 6));
+                    db.collection("users").document(authuser.getUid()).set(user);
                 }catch (IllegalStateException e){
                     db.collection("users").document(authuser.getUid()).set(new User(authuser.getCurrentUser().getDisplayName(), new ArrayList<Vaccines>()));
                     setUser(authuser);
@@ -78,7 +80,7 @@ public class VaccineFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
-            recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(getActivity(), user.getVaccinations() ,mListener));
         }
         return view;
     }
@@ -104,6 +106,6 @@ public class VaccineFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem item);
+        void onListFragmentInteraction(Boolean adder);
     }
 }

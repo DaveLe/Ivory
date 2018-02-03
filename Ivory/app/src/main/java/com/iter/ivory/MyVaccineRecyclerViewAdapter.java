@@ -1,5 +1,6 @@
 package com.iter.ivory;
 
+import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -8,17 +9,17 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.iter.ivory.VaccineFragment.OnListFragmentInteractionListener;
-import com.iter.ivory.dummy.DummyContent.DummyItem;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccineRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
     private final OnListFragmentInteractionListener mListener;
+    private ArrayList<Vaccines> vaccinations;
 
-    public MyVaccineRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
-        mValues = items;
+
+    public MyVaccineRecyclerViewAdapter(ArrayList<Vaccines> vaccinations, OnListFragmentInteractionListener listener) {
+        this.vaccinations = vaccinations;
         mListener = listener;
     }
 
@@ -31,16 +32,15 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
 
     @Override
     public void onBindViewHolder(final ViewHolder holder, int position) {
-        holder.mItem = mValues.get(position);
         //holder.mContentView.setText(mValues.get(position).content);
-
+        holder.nameView.setText(vaccinations.get(position).getVaccineName());
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
                     // Notify the active callbacks interface (the activity, if the
                     // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(holder.mItem);
+                    mListener.onListFragmentInteraction(true);
                 }
             }
         });
@@ -48,7 +48,7 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
 
     @Override
     public int getItemCount() {
-        return mValues.size();
+        return vaccinations.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -56,7 +56,6 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
         public final TextView nameView;
         public final TextView lastView;
         public final ImageView vacicon;
-        public DummyItem mItem;
 
         public ViewHolder(View view) {
             super(view);

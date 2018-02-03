@@ -5,12 +5,10 @@ import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
 import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
-import android.util.Log
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
 import com.iter.ivory.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_main.*
-import java.util.*
 
 
 // sign in response id and providers used with AuthUI
@@ -65,6 +63,16 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
             } else {
                 // TODO: handle sign in failed
             }
+        }else if (requestCode == 5){
+            if (resultCode == RESULT_OK) {
+                // Successfully signed in - update the user object
+                val name = data!!.getStringExtra("name")
+                val months = data.getIntExtra("months", -1)
+                val years = data.getIntExtra("years", -1)
+
+            } else {
+                // TODO: handle sign in failed
+            }
         }
     }
 
@@ -86,7 +94,8 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
         false
     }
 
-    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
-        //do nothing
+    override fun onListFragmentInteraction(new: Boolean) {
+        val newAdder = Intent(this, AddVaccination::class.java)
+        startActivityForResult(newAdder, 5)
     }
 }

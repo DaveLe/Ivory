@@ -9,14 +9,17 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Spinner;
 
+import com.google.firebase.auth.FirebaseAuth;
+
 public class AddVaccination extends AppCompatActivity {
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_vaccination);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+//        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+//        setSupportActionBar(toolbar);
 
         Spinner vaccinationList = findViewById(R.id.spinner);
 
@@ -29,6 +32,7 @@ public class AddVaccination extends AppCompatActivity {
         int monthNumber = Integer.valueOf(monthInput);
 
         Vaccines v = new Vaccines("To - Do", monthNumber, yearNumber);
+
     }
 
 }
