@@ -48,7 +48,7 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
         setContentView(R.layout.activity_main)
         // setup bottom navigation bar
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
-        navigation.setSelectedItemId(R.id.navigation_personal)
+        navigation.selectedItemId = R.id.navigation_personal
     }
 
 
