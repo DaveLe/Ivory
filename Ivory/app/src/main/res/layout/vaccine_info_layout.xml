@@ -9,7 +9,6 @@
         android:id="@+id/vac"
         android:layout_width="220dp"
         android:layout_height="49dp"
-        android:text="TextView"
         android:textSize="24sp"
         tools:layout_editor_absoluteX="70dp"
         tools:layout_editor_absoluteY="26dp" />

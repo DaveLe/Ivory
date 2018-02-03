@@ -1,5 +1,6 @@
 package com.iter.ivory;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -15,7 +16,10 @@ public class VaccineInfo extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vaccine_info_layout);
 
+        Intent i = getIntent();
         TextView vaccination = findViewById(R.id.vac);
+        vaccination.setText(i.getStringExtra("name"));
+
 
     }
 

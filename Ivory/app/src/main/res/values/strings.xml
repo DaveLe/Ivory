@@ -2,11 +2,35 @@
     <string name="app_name">Immune8</string>
     <string name="title_suggested">Suggested</string>
     <string name="title_personal">My Vaccines</string>
-    <string name="Hepititas_A">Hepititas A</string>
-    <string name="Hepititas_B">Hepititas B</string>
-    <string name="Haemophilus_influenzae_type_b">Haemophilus influenzae type b (Hib)</string>
-    <string name="Human_Papillomavirus">Human Papillomavirus (HPV)</string>
-    <string name="Seasonal_Influenza">Seasonal Influenza (Flu)</string>
+
+    <string name="adenovirusLink"> https://www.cdc.gov/adenovirus/about/prevention-treatment.html</string>
+    <string name="anthraxLink"> https://www.cdc.gov/vaccines/vpd/anthrax/hcp/index.html</string>
+    <string name="diphtheriaLink"> https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/hcp/index.html</string>
+    <string name="hepatitis_ALink"> https://www.cdc.gov/vaccines/vpd/hepa/hcp/index.html</string>
+    <string name="hepatitis_BLink"> https://www.cdc.gov/vaccines/vpd/hepb/hcp/index.htmll</string>
+    <string name="haemophilus_influenzae_type_bLink"> https://www.cdc.gov/vaccines/vpd/hib/hcp/index.html</string>
+    <string name="human_PapillomavirusLink"> https://www.cdc.gov/vaccines/vpd/hpv/hcp/index.html</string>
+    <string name="seasonal_InfluenzaLink"> https://www.cdc.gov/vaccines/vpd/flu/hcp/index.html</string>
+    <string name="japanese_Encephalitis"> https://www.cdc.gov/vaccines/vpd/j-enceph/hcp/index.html</string>
+    <string name="measlesLink"> https://www.cdc.gov/vaccines/vpd/mmr/hcp/index.html</string>
+    <string name="meningococcalLink"> https://www.cdc.gov/vaccines/vpd/mening/hcp/index.html</string>
+    <string name="mumpsLink"> https://www.cdc.gov/vaccines/vpd/mmr/hcp/index.html</string>
+    <string name="pertussisLink"> https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/hcp/index.html</string>
+    <string name="pneumococcalLink"> https://www.cdc.gov/vaccines/vpd/pneumo/hcp/index.html</string>
+    <string name="polioLink"> https://www.cdc.gov/vaccines/vpd/polio/hcp/index.html</string>
+    <string name="rabiesLink"> https://www.cdc.gov/vaccines/vpd/rabies/hcp/index.html</string>
+    <string name="rotavirusLink"> https://www.cdc.gov/vaccines/vpd/rotavirus/hcp/index.html</string>
+    <string name="rubellaLink"> https://www.cdc.gov/vaccines/vpd/mmr/hcp/index.html</string>
+    <string name="shinglesLink"> https://www.cdc.gov/vaccines/vpd/shingles/hcp/index.html</string>
+    <string name="smallpoxLink"> https://www.cdc.gov/vaccines/vpd/smallpox/hcp/index.html</string>
+    <string name="Tetanus"> https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/hcp/index.html</string>
+    <string name="tuberculosisLink"> https://www.cdc.gov/vaccines/vpd/tb/hcp/index.html</string>
+    <string name="typhoid_FeverLink"> https://www.cdc.gov/vaccines/vpd/typhoid/hcp/index.html</string>
+    <string name="varicellaLink"> https://www.cdc.gov/vaccines/vpd/varicella/hcp/index.html</string>
+    <string name="yellow_FeverLink"> https://www.cdc.gov/vaccines/vpd/yf/hcp/index.html</string>
+
+
+
 
     <string-array name="Adenovirus">
         <item>Adenovirus</item>

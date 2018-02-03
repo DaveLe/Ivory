@@ -80,7 +80,7 @@ public class VaccineFragment extends Fragment {
             Context context = view.getContext();
             RecyclerView recyclerView = (RecyclerView) view;
             recyclerView.setLayoutManager(new GridLayoutManager(context, 3));
-            recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(getActivity(), user.getVaccinations() ,mListener));
+            recyclerView.setAdapter(new MyVaccineRecyclerViewAdapter(user.getVaccinations() ,mListener));
         }
         return view;
     }
