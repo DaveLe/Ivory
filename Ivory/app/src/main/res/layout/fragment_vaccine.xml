@@ -16,11 +16,12 @@
             android:gravity="center"
             android:orientation="vertical">
             <ImageView
-                android:layout_width="40dp"
-                android:layout_height="40dp"
+                android:padding="10dp"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
                 android:id="@+id/vacicon"
                 android:layout_margin="4dp"
-                app:srcCompat="@drawable/ic_vpn_key_black_24dp"/>
+                app:srcCompat="@drawable/transparent2"/>
 
             <TextView
                 android:id="@+id/name"
