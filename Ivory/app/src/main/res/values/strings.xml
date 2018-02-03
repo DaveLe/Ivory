@@ -150,5 +150,6 @@
         <item>DTaP-IPV/Hib - Pentacel</item>
     </string-array>
     <string name="title_activity_add_vaccination">AddVaccination</string>
+    <string name="title_activity_vaccine_info">VaccineInfo</string>
 
 </resources>
