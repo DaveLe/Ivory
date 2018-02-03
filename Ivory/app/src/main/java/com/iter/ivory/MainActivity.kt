@@ -3,9 +3,11 @@ package com.iter.ivory
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.BottomNavigationView
+import android.support.v4.app.Fragment
 import android.support.v7.app.AppCompatActivity
 import com.firebase.ui.auth.AuthUI
 import com.google.firebase.auth.FirebaseAuth
+import com.iter.ivory.dummy.DummyContent
 import kotlinx.android.synthetic.main.activity_main.*
 
 
@@ -15,7 +17,7 @@ private val providers = mutableListOf(
         AuthUI.IdpConfig.EmailBuilder().build(),
         AuthUI.IdpConfig.PhoneBuilder().build())
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteractionListener{
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,6 +42,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         // setup bottom navigation bar
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        navigation.setSelectedItemId(R.id.navigation_personal)
     }
 
 
@@ -64,14 +67,20 @@ class MainActivity : AppCompatActivity() {
         when (item.itemId) {
             // TODO: decide on which navigation menus to include
             R.id.navigation_personal -> {
-                message.setText(R.string.title_personal)
+                val vaccineFragment: Fragment = VaccineFragment.newInstance(true)
+                supportFragmentManager.beginTransaction().replace(R.id.content_view, vaccineFragment).commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.navigation_suggested -> {
-                message.setText(R.string.title_suggested)
+                val vaccineFragment: Fragment = VaccineFragment.newInstance(true)
+                supportFragmentManager.beginTransaction().replace(R.id.content_view, vaccineFragment).commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
+    }
+
+    override fun onListFragmentInteraction(item: DummyContent.DummyItem?) {
+        //do nothing
     }
 }
