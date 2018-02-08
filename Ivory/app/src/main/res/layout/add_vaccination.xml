@@ -25,11 +25,13 @@
         android:padding="8dp"
         android:text="Vaccine Name"
         android:textSize="18sp"/>
+
     <Spinner
         android:id="@+id/spinnersub"
         android:layout_width="wrap_content"
-        android:padding="8dp"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:entries="@array/Adenovirus"
+        android:padding="8dp" />
 
     <TextView
         android:id="@+id/textView5"

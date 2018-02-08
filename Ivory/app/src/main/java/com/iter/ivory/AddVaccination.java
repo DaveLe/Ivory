@@ -56,12 +56,14 @@ public class AddVaccination extends AppCompatActivity {
                 int monthNumber;
                 try {
                     yearNumber = Integer.valueOf(yearInput);
-                    monthNumber = Integer.valueOf(monthInput);
                 }catch (NumberFormatException e){
                     yearNumber = 0;
+                }
+                try {
+                    monthNumber = Integer.valueOf(yearInput);
+                }catch (NumberFormatException e){
                     monthNumber = 0;
                 }
-
                 Vaccines vac = new Vaccines(vaccinationList.getSelectedItem().toString(),  vaccinationsubList.getSelectedItem().toString(), monthNumber, yearNumber);
                 u.addVaccinations(vac);
                 db.collection("users").document(authUser.getUid()).set(u);
