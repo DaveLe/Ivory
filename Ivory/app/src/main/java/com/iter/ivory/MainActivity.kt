@@ -31,13 +31,13 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
         setContentView(R.layout.activity_main)
         // setup bottom navigation bar
         navigation.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        bottomnav = navigation
 
         val user = FirebaseAuth.getInstance().currentUser
         if (user != null) {
             // if user is already signed in get name and uid
             val uid = user.uid
             val name = user.displayName
-            bottomnav = navigation
             bottomnav!!.selectedItemId = R.id.navigation_personal
 
         }else{
@@ -71,7 +71,6 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
                 // TODO: handle sign in failed
             }
         }else if (requestCode == 5){
-            bottomnav!!.selectedItemId = R.id.navigation_personal
 
             if (resultCode == RESULT_OK) {
                 // Successfully signed in - update the user object
@@ -83,6 +82,8 @@ class MainActivity : AppCompatActivity(), VaccineFragment.OnListFragmentInteract
                 // TODO: handle sign in failed
             }
         }
+        bottomnav!!.selectedItemId = R.id.navigation_personal
+
     }
 
 
