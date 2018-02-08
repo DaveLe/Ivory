@@ -2,9 +2,6 @@ package com.iter.ivory;
 
 import java.util.Date;
 
-/**
- * Created by David on 2/3/18.
- */
 import java.util.Calendar;
 
 public class Vaccines {

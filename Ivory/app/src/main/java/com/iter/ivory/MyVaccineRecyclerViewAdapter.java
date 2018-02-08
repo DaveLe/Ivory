@@ -1,14 +1,17 @@
 package com.iter.ivory;
 
-import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import com.iter.ivory.VaccineFragment.OnListFragmentInteractionListener;
+
 import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Date;
 
 public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccineRecyclerViewAdapter.ViewHolder> {
 
@@ -29,16 +32,31 @@ public class MyVaccineRecyclerViewAdapter extends RecyclerView.Adapter<MyVaccine
     }
 
     @Override
-    public void onBindViewHolder(final ViewHolder holder, int position) {
-        //holder.mContentView.setText(mValues.get(position).content);
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.nameView.setText(vaccinations.get(position).getVaccineName());
+        Calendar calvac = Calendar.getInstance();
+        calvac.setTime(vaccinations.get(position).getStartDate());
+        Calendar calnow = Calendar.getInstance();
+        calnow.setTime(new Date());
+        int diffyear = calnow.get(Calendar.YEAR) - calvac.get(Calendar.YEAR);
+        if (diffyear == 0) {
+            holder.lastView.setText("This Year");
+        }else if (diffyear == 1){
+            holder.lastView.setText("1 Year Ago");
+        }else{
+            holder.lastView.setText(diffyear + " Years Ago");
+
+        }
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    mListener.onListFragmentInteraction(true);
+                    mListener.onListFragmentInteraction(
+                            vaccinations.get(position).getVaccineName(),
+                            vaccinations.get(position).getSubName(),
+                            vaccinations.get(position).getStartDate(),
+                            vaccinations.get(position).getRemindDate(),
+                            holder.getAdapterPosition());
                 }
             }
         });

@@ -23,7 +23,7 @@
     <string name="rubellaLink"> https://www.cdc.gov/vaccines/vpd/mmr/hcp/index.html</string>
     <string name="shinglesLink"> https://www.cdc.gov/vaccines/vpd/shingles/hcp/index.html</string>
     <string name="smallpoxLink"> https://www.cdc.gov/vaccines/vpd/smallpox/hcp/index.html</string>
-    <string name="Tetanus"> https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/hcp/index.html</string>
+    <string name="tetanusLink"> https://www.cdc.gov/vaccines/vpd/dtap-tdap-td/hcp/index.html</string>
     <string name="tuberculosisLink"> https://www.cdc.gov/vaccines/vpd/tb/hcp/index.html</string>
     <string name="typhoid_FeverLink"> https://www.cdc.gov/vaccines/vpd/typhoid/hcp/index.html</string>
     <string name="varicellaLink"> https://www.cdc.gov/vaccines/vpd/varicella/hcp/index.html</string>
@@ -36,7 +36,6 @@
         <item>Diphtheria</item>
         <item>Hepatitis A</item>
         <item>Hepatitis B</item>
-        <item>HepB (Engerix-B, Recombivax HB)</item>
         <item>Haemophilus influenzae type b (Hib)</item>
         <item>Human Papillomavirus (HPV)</item>
         <item>Seasonal Influenza (Flu)</item>
@@ -48,6 +47,7 @@
         <item>Pneumococcal</item>
         <item>Polio</item>
         <item>Rabies</item>
+        <item>Rotavirus</item>
         <item>Rubella</item>
         <item>Shingles</item>
         <item>Smallpox</item>
@@ -58,9 +58,6 @@
         <item>Yellow Fever</item>
     </string-array>
 
-
-
-
     <string-array name="Adenovirus">
         <item>Adenovirus</item>
     </string-array>
@@ -70,7 +67,6 @@
     </string-array>
 
     <string-array name="Diphtheria">
-        <item>AVA (BioThrax)</item>
         <item>DTaP (Daptacel, Infanrix)</item>
         <item>Td (Tenivac, generic)</item>
         <item>DT (-generic-)</item>
@@ -110,7 +106,7 @@
     </string-array>
 
     <string-array name="Japanese_Encephalitis">
-        <item>JE (Ixiaro))</item>
+        <item>JE (Ixiaro)</item>
     </string-array>
 
     <string-array name="Measles">
@@ -130,58 +126,6 @@
         <item>MMRV (ProQuad)</item>
     </string-array>
 
-    <string-array name="Yellow_Fever">
-        <item>YF (YF-Vax)</item>
-    </string-array>
-
-    <string-array name="Varicella">
-        <item>VAR - Varivax</item>
-        <item>MMRV - ProQuad</item>
-    </string-array>
-
-    <string-array name="Typhoid_Fever">
-        <item>Typhoid Oral - Vivotif</item>
-        <item>Typhoid Polysaccharide - Typhim Vi</item>
-    </string-array>
-
-
-    <string-array name="Tuberculosis">
-        <item>Tuberculosis</item>
-    </string-array>
-
-    <string-array name="Tetanus">
-        <item>DTaP - Daptacel, Infanrix</item>
-        <item>Td Tenivac, generic</item>
-        <item>DT generic</item>
-        <item>Tdap - Adacel, Boostrix</item>
-        <item>DTaP-IPV - Kinrix, Quadracel</item>
-        <item>DTaP-HepB-IPV - Pediarix</item>
-        <item>DTaP-IPV/Hib - Pentacel</item>
-    </string-array>
-
-    <string-array name="Shingles">
-        <item>ZOS - Zostavax</item>
-    </string-array>
-
-    <string-array name="Smallpox">
-        <item>Vaccinia (ACAM2000)</item>
-    </string-array>
-
-    <string-array name="Rabies">
-        <item>Rabies - Imovax Rabies, RabAvert</item>
-    </string-array>
-
-
-    <string-array name="Rotavirus">
-        <item>RV1 - Rotarix</item>
-        <item>RV5 - RotaTeq</item>
-    </string-array>
-
-
-    <string-array name="Rubella">
-        <item>MMR : M-M-R II</item>
-        <item>MMRV - ProQuad</item>
-    </string-array>
 
     <string-array name="Pertussis">
         <item>DTaP - Daptacel, Infanrix</item>
@@ -202,6 +146,59 @@
         <item> DTaP-HepB-IPV - Pediarix</item>
         <item>DTaP-IPV/Hib - Pentacel</item>
     </string-array>
+    <string-array name="Rabies">
+        <item>Rabies - Imovax Rabies, RabAvert</item>
+    </string-array>
+    <string-array name="Rotavirus">
+        <item>RV1 - Rotarix</item>
+        <item>RV5 - RotaTeq</item>
+    </string-array>
+
+    <string-array name="Rubella">
+        <item>MMR : M-M-R II</item>
+        <item>MMRV - ProQuad</item>
+    </string-array>
+    <string-array name="Shingles">
+        <item>ZOS - Zostavax</item>
+    </string-array>
+
+    <string-array name="Smallpox">
+        <item>Vaccinia (ACAM2000)</item>
+    </string-array>
+    <string-array name="Tetanus">
+        <item>DTaP - Daptacel, Infanrix</item>
+        <item>Td Tenivac, generic</item>
+        <item>DT generic</item>
+        <item>Tdap - Adacel, Boostrix</item>
+        <item>DTaP-IPV - Kinrix, Quadracel</item>
+        <item>DTaP-HepB-IPV - Pediarix</item>
+        <item>DTaP-IPV/Hib - Pentacel</item>
+    </string-array>
+    <string-array name="Tuberculosis">
+        <item>Tuberculosis</item>
+    </string-array>
+    <string-array name="Typhoid_Fever">
+        <item>Typhoid Oral - Vivotif</item>
+        <item>Typhoid Polysaccharide - Typhim Vi</item>
+    </string-array>
+
+
+    <string-array name="Varicella">
+        <item>VAR - Varivax</item>
+        <item>MMRV - ProQuad</item>
+    </string-array>
+
+    <string-array name="Yellow_Fever">
+        <item>YF (YF-Vax)</item>
+    </string-array>
+
+
+
+
+
+
+
+
     <string name="title_activity_add_vaccination">Add Vaccination</string>
     <string name="title_activity_vaccine_info">Vaccine Info</string>
 

@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,6 +16,7 @@ import com.google.firebase.firestore.DocumentSnapshot;
 import com.google.firebase.firestore.FirebaseFirestore;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public class VaccineFragment extends Fragment {
     private static final String ARG_VIEW_PERSONAL = "arg_view_personal";
@@ -46,10 +46,6 @@ public class VaccineFragment extends Fragment {
         }
         FirebaseAuth authuser = FirebaseAuth.getInstance();
         setUser(authuser);
-
-        if (mViewPersonal){
-
-        }
     }
 
     public void setUser(final FirebaseAuth authuser){
@@ -106,6 +102,6 @@ public class VaccineFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(Boolean adder);
+        void onListFragmentInteraction(String genName, String vaccine, Date date, Date remDate, Integer position);
     }
 }

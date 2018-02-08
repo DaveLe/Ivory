@@ -18,11 +18,10 @@ import com.google.firebase.firestore.FirebaseFirestore;
 import java.util.ArrayList;
 
 public class AddVaccination extends AppCompatActivity {
-    ArrayAdapter<CharSequence> adapter;
-    ArrayList<String> sublist = new ArrayList<>();
     FirebaseAuth authUser = FirebaseAuth.getInstance();
     User u = new User(authUser.getCurrentUser().getDisplayName(),new ArrayList<Vaccines>());
     FirebaseFirestore db = FirebaseFirestore.getInstance();
+    ArrayAdapter<String> adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,9 +36,10 @@ public class AddVaccination extends AppCompatActivity {
                     u = documentSnapshot.toObject(User.class);
             }
         });
-        Spinner vaccinationList = findViewById(R.id.spinner);
+        final Spinner vaccinationList = findViewById(R.id.spinner);
+
         final Spinner vaccinationsubList = findViewById(R.id.spinnersub);
-        adapter = ArrayAdapter.createFromResource(getApplication(), R.array.Anthrax, android.R.layout.simple_spinner_item);
+        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_item, getResources().getStringArray(R.array.Adenovirus));
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         vaccinationsubList.setAdapter(adapter);
 
@@ -51,10 +51,18 @@ public class AddVaccination extends AppCompatActivity {
                 TextInputEditText yearView = findViewById(R.id.year);
                 TextInputEditText monthView = findViewById(R.id.month);
                 String yearInput = yearView.getText().toString();
-                int yearNumber = Integer.valueOf(yearInput);
                 String monthInput = monthView.getText().toString();
-                int monthNumber = Integer.valueOf(monthInput);
-                Vaccines vac = new Vaccines("Anthrax", "AVA (BioThrax)", monthNumber, yearNumber);
+                int yearNumber;
+                int monthNumber;
+                try {
+                    yearNumber = Integer.valueOf(yearInput);
+                    monthNumber = Integer.valueOf(monthInput);
+                }catch (NumberFormatException e){
+                    yearNumber = 0;
+                    monthNumber = 0;
+                }
+
+                Vaccines vac = new Vaccines(vaccinationList.getSelectedItem().toString(),  vaccinationsubList.getSelectedItem().toString(), monthNumber, yearNumber);
                 u.addVaccinations(vac);
                 db.collection("users").document(authUser.getUid()).set(u);
                 finish();
@@ -65,10 +73,133 @@ public class AddVaccination extends AppCompatActivity {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
                 switch(position){
-
-                    case 1:
-                        adapter = ArrayAdapter.createFromResource(getApplication(), R.array.Anthrax, android.R.layout.simple_spinner_item);
+                    case 0:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Adenovirus));
                         adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 1:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Anthrax));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 2:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Diphtheria));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 3:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Hepatitis_A));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 4:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Hepatitis_B));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 5:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Haemophilus_influenzae_type_b));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 6:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Human_Papillomavirus));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 7:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Seasonal_Influenza));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 8:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Japanese_Encephalitis));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 9:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Measles));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 10:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Meningococcal));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 11:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Mumps));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 12:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Pertussis));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 13:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Pneumococcal));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 14:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Polio));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 15:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Rabies));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 16:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Rotavirus));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 17:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Rubella));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 18:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Shingles));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 19:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Smallpox));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 20:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Tetanus));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 21:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Tuberculosis));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 22:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Typhoid_Fever));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 23:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Varicella));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+                    case 24:
+                        adapter = new ArrayAdapter<>(getApplication(), android.R.layout.simple_spinner_dropdown_item, getResources().getStringArray(R.array.Yellow_Fever));
+                        adapter.notifyDataSetChanged();
+                        vaccinationsubList.setAdapter(adapter);
+                        break;
+
+
                 }
 
             }
